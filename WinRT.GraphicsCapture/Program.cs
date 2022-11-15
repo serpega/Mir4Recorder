@@ -59,7 +59,7 @@ namespace WinRT.GraphicsCapture
             //if (gcaps.Count > 0)
             //{
 
-            using DxWindow window = new DxWindow("Capturing mirs", gcaps, Settings.Default.txtCode, Settings.Default.txtName, vs);
+            DxWindow window = new DxWindow("Capturing mirs", gcaps, Settings.Default.txtCode, Settings.Default.txtName, vs);
             f.dxWindow = window;
             window.Show();
            

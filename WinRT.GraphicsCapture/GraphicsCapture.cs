@@ -195,7 +195,7 @@ namespace WinRT.GraphicsCapture
 
         public Texture2D TryGetNextFrameAsTexture2D(Device device)
         {
-            using var frame = _captureFramePool?.TryGetNextFrame();
+            var frame = _captureFramePool?.TryGetNextFrame();
             if (frame == null)
                 return null;
 
@@ -204,7 +204,7 @@ namespace WinRT.GraphicsCapture
             var surfaceDxgiInterfaceAccess = (IDirect3DDxgiInterfaceAccess) frame.Surface;
             var pResource = surfaceDxgiInterfaceAccess.GetInterface(new Guid("dc8e63f3-d12b-4952-b47b-5e45026a862d"));
 
-            using var surfaceTexture = new Texture2D(pResource); // shared resource
+            var surfaceTexture = new Texture2D(pResource); // shared resource
 
             var height = surfaceTexture.Description.Height;
             var width = surfaceTexture.Description.Width;

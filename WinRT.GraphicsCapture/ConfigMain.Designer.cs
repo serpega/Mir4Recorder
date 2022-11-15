@@ -37,13 +37,11 @@
             this.chkMir1 = new System.Windows.Forms.CheckBox();
             this.chkMir0 = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(324, 12);
+            this.button1.Location = new System.Drawing.Point(231, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -63,7 +61,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = global::WinRT.GraphicsCapture.Properties.Settings.Default.RunOnWindows;
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WinRT.GraphicsCapture.Properties.Settings.Default, "RunOnWindows", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBox1.Location = new System.Drawing.Point(124, 65);
+            this.checkBox1.Location = new System.Drawing.Point(31, 74);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(140, 17);
             this.checkBox1.TabIndex = 8;
@@ -77,7 +75,7 @@
             this.chkMir2.Checked = global::WinRT.GraphicsCapture.Properties.Settings.Default.chkMir2;
             this.chkMir2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkMir2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WinRT.GraphicsCapture.Properties.Settings.Default, "chkMir2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkMir2.Location = new System.Drawing.Point(248, 18);
+            this.chkMir2.Location = new System.Drawing.Point(155, 27);
             this.chkMir2.Name = "chkMir2";
             this.chkMir2.Size = new System.Drawing.Size(46, 17);
             this.chkMir2.TabIndex = 2;
@@ -89,7 +87,7 @@
             this.chkMir1.AutoSize = true;
             this.chkMir1.Checked = global::WinRT.GraphicsCapture.Properties.Settings.Default.chkMir1;
             this.chkMir1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WinRT.GraphicsCapture.Properties.Settings.Default, "chkMir1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkMir1.Location = new System.Drawing.Point(186, 18);
+            this.chkMir1.Location = new System.Drawing.Point(93, 27);
             this.chkMir1.Name = "chkMir1";
             this.chkMir1.Size = new System.Drawing.Size(46, 17);
             this.chkMir1.TabIndex = 1;
@@ -102,7 +100,7 @@
             this.chkMir0.Checked = global::WinRT.GraphicsCapture.Properties.Settings.Default.chkMir0;
             this.chkMir0.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkMir0.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WinRT.GraphicsCapture.Properties.Settings.Default, "chkMir0", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.chkMir0.Location = new System.Drawing.Point(124, 18);
+            this.chkMir0.Location = new System.Drawing.Point(31, 27);
             this.chkMir0.Name = "chkMir0";
             this.chkMir0.Size = new System.Drawing.Size(46, 17);
             this.chkMir0.TabIndex = 0;
@@ -115,24 +113,11 @@
             this.timer1.Interval = 3600000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(101, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // ConfigMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 121);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(350, 121);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.chkMir2);
@@ -143,7 +128,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConfigMain_FormClosed);
             this.Load += new System.EventHandler(this.ConfigMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +142,5 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

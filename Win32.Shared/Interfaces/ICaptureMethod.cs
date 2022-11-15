@@ -12,18 +12,18 @@ namespace Win32.Shared.Interfaces
         bool IsCapturing { get; }
 
 
-        public System.Drawing.Bitmap getBitmap();
+        System.Drawing.Bitmap getBitmap();
 
 
-        public IntPtr getHwnd();
+        IntPtr getHwnd();
 
-        public void setHwnd(IntPtr hwnd);
+        void setHwnd(IntPtr hwnd);
 
-        public string getName();
+        string getName();
 
-        public string getStatus();
+        string getStatus();
 
-        public void setStatus(string s);
+        void setStatus(string s);
 
 
         void StartCapture(IntPtr hWnd, Device device, Factory factory);

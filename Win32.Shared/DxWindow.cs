@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
-using IronOcr;
+
 using SharpDX;
 using SharpDX.D3DCompiler;
 using SharpDX.Direct3D;
@@ -146,25 +146,25 @@ namespace Win32.Shared
                 Usage = Usage.RenderTargetOutput
             };
             Device.CreateWithSwapChain(DriverType.Hardware, DeviceCreationFlags.BgraSupport, swapChainDescription, out var device, out var swapChain);
-            using var swapChain1 = swapChain.QueryInterface<SwapChain1>();
+            var swapChain1 = swapChain.QueryInterface<SwapChain1>();
 
             // ignore all Windows events
-            using var factory = swapChain1.GetParent<Factory>();
+            var factory = swapChain1.GetParent<Factory>();
             factory.MakeWindowAssociation(form.Handle, WindowAssociationFlags.IgnoreAll);
 
-            using var vertexShaderByteCode = ShaderBytecode.CompileFromFile("./Shader.fx", "VS", "vs_5_0");
-            using var vertexShader = new VertexShader(device, vertexShaderByteCode);
+            var vertexShaderByteCode = ShaderBytecode.CompileFromFile("./Shader.fx", "VS", "vs_5_0");
+            var vertexShader = new VertexShader(device, vertexShaderByteCode);
 
-            using var pixelShaderByteCode = ShaderBytecode.CompileFromFile("./Shader.fx", "PS", "ps_5_0");
-            using var pixelShader = new PixelShader(device, pixelShaderByteCode);
+            var pixelShaderByteCode = ShaderBytecode.CompileFromFile("./Shader.fx", "PS", "ps_5_0");
+            var pixelShader = new PixelShader(device, pixelShaderByteCode);
 
-            using var layout = new InputLayout(device, vertexShaderByteCode, new[]
+            var layout = new InputLayout(device, vertexShaderByteCode, new[]
             {
                 new InputElement("POSITION", 0, Format.R32G32B32_Float, 0, 0),
                 new InputElement("TEXCOORD", 0, Format.R32G32_Float, 12, 0)
             });
 
-            using var vertexes = Buffer.Create(device, BindFlags.VertexBuffer, new[]
+            var vertexes = Buffer.Create(device, BindFlags.VertexBuffer, new[]
             {
                 new Vertex { Position = new RawVector3(-1.0f, 1.0f, 0.5f), TexCoord = new RawVector2(0.0f, 0.0f) },
                 new Vertex { Position = new RawVector3(1.0f, 1.0f, 0.5f), TexCoord = new RawVector2(1.0f, 0.0f) },
@@ -283,7 +283,7 @@ namespace Win32.Shared
                     if (!_captureMethod.IsCapturing)
                         _captureMethod.StartCapture(form.Handle, device, factory);
 
-                    using var texture2d = _captureMethod.TryGetNextFrameAsTexture2D(device);
+                    var texture2d = _captureMethod.TryGetNextFrameAsTexture2D(device);
 
                     if (ii == currgcap && false)
                     {
@@ -308,7 +308,7 @@ namespace Win32.Shared
                         
                         if (texture2d != null)
                         {
-                            using var shaderResourceView = new ShaderResourceView(device, texture2d);
+                            var shaderResourceView = new ShaderResourceView(device, texture2d);
                             device.ImmediateContext.PixelShader.SetShaderResource(0, shaderResourceView);
                         }
                         // draw it
